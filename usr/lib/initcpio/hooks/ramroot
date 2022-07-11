@@ -177,7 +177,7 @@ run_hook() {
         sleep 2
         return 1
     fi
-    mkfs.ext4 -q "$zram_device"
+    mkfs.btrfs -q "$zram_device"
     # FAIL: error formatting zram device:
     if [ $? -ne 0 ]; then
         printf '\e[1;31m==> FAILED: \e[1;37m%s\e[0;37m\n' \

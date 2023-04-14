@@ -1,9 +1,9 @@
 =======
-ramroot
+ramroot-btrfs
 =======
 
 Run Linux entirely from RAM!  This is customizable mkinitcpio_ hook
-that completely loads the root file system to a zram partition
+that completely loads the root file system to a zram partition formatted in Btrfs
 during the initramfs_ boot stage.
 
 

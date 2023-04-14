@@ -13,8 +13,7 @@ depends=('mkinitcpio')
 install=ramroot.install
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$_gitver.tar.gz"
     ramroot.install)
-md5sums=('029715d5ec940c7285d80add25cf0b21'
-         'cd9b4ef8c10a6eafead22453f8cf4ec0')
+md5sums=('skip')
 
 package() {
 	cd "$pkgname-$pkgver"

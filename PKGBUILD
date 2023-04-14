@@ -1,9 +1,9 @@
 pkgname=ramroot-btrfs
-pkgver=2.2
+pkgver=2.2.1
 pkgrel=1
 _gitrepo=ramroot-btrfs
 _gituser=K-arch27
-_gitver=2.2
+_gitver=2.2.1
 pkgdesc="Load root file system to zram during boot with btrfs support"
 arch=('x86_64')
 url="https://github.com/$_gituser/$_gitrepo"

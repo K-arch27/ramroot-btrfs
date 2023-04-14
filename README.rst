@@ -1,11 +1,22 @@
 =======
-ramroot
+ramroot-btrfs
 =======
 
 Run Linux entirely from RAM! This is a customizable mkinitcpio_ hook that
 completely loads the root file system to a zram partition during the initramfs_
 boot stage.
 
+btrfs Notes
+=======
+If not using Btrfs , it should work as the original but the zram device is formated with btrfs instead
+
+If using subvolume 
+
+The root subvolume needs to be called @ for it to work properly 
+
+since it will comment out all fstab entry under that subvolume so they don't get mounted 
+
+should not be an issue if using recommanded layout by Arch or Snapper
 
 Usage
 =====

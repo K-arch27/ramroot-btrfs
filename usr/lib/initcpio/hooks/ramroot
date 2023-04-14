@@ -225,14 +225,8 @@ run_hook() {
                 -e "s|^(\s*${mount_path}/[^\s]+\s+.*)$|#\1|g;" \
                 /zram_root/etc/fstab
         done
-        for mount in $mounts_zram; do
-            mount_path="${mount#*:}"
-            uuid=$(blkid -o value -s UUID "$mount_path")
-            if [ -n "$uuid" ]; then
-                sed -Ei "s|^(\s*UUID=${uuid}\s+.*)$|#\1|g;" /zram_root/etc/fstab
-            fi
-        done
-        
+        #commenting out every subvolume under root
+        sed -Ei 's|(.*subvol=/@.*)|#\1|g;' /zram_root/etc/fstab
         
     fi
 

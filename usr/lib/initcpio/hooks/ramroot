@@ -225,6 +225,14 @@ run_hook() {
                 -e "s|^(\s*${mount_path}/[^\s]+\s+.*)$|#\1|g;" \
                 /zram_root/etc/fstab
         done
+        root_subvols=$(btrfs subvolume list /)
+        for subvol in $root_subvols; do
+            subvol_path="${subvol#/*/}"
+            sed -Ei "s|^(\s*[^\s]+\s+${subvol_path}\s+.*)$|#\1|g;" \
+                /zram_root/etc/fstab
+        done
+        
+        
     fi
 
     # copy /etc/ramroot.z files:
